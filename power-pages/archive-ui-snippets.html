@@ -1,0 +1,16 @@
+<!-- Archive Button -->
+<button class="btn btn-warning" onclick="markForArchive(recordId)">
+  Archive Record
+</button>
+
+<script>
+function markForArchive(id) {
+  fetch(`/_api/cr_active_records(${id})`, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({ cr_markforarchive: true })
+  }).then(() => alert("Record queued for archival"));
+}
+</script>
