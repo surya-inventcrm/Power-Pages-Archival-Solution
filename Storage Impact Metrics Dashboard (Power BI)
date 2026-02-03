@@ -1,0 +1,62 @@
+🎯 Dashboard Objective
+
+Show before vs after archival impact on Dataverse storage and portal performance.
+
+📄 Page 1 – Storage Overview
+KPIs
+
+Total Dataverse Storage (GB)
+
+Archive Storage Size
+
+Storage Saved (%)
+
+Monthly Growth Rate
+
+Visuals
+
+Line chart: Storage growth over time
+
+Card: Storage saved after archival
+
+📄 Page 2 – Record Volume Reduction
+Metrics
+Metric	Description
+Active Records	Current portal data
+Archived Records	Moved records
+Purged Records	Deleted after retention
+Visuals
+
+Stacked bar: Active vs Archived
+
+Trend line: Record reduction
+
+📄 Page 3 – Attachment Impact (🔥 Most Valuable)
+Metrics
+
+Total attachment size before archive
+
+Blob storage size
+
+Dataverse storage freed
+
+Visuals
+
+Before/After comparison
+
+Pie chart: Storage by type
+
+📌 This slide sells the solution to leadership
+
+📄 Page 4 – Portal Performance Correlation
+Metrics
+
+Avg page load time
+
+API calls per page
+
+Records queried per list
+
+Insight
+
+Archival reduced list query size → fewer API calls → faster pages
