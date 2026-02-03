@@ -12,3 +12,14 @@ Archival Lifecycle Diagram
 Security & Access Model
 
 <img width="575" height="212" alt="image" src="https://github.com/user-attachments/assets/31131029-9ad0-4676-ba30-3d0e0940a9f6" />
+
+
+Design Principles
+
+No hard deletes
+
+Storage optimization
+
+Audit-friendly
+
+Restore-ready architecture
