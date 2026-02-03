@@ -1,26 +1,6 @@
 # Power-Pages-Archival-Solution
 🎯 What This Solution Solves  Power Pages portals often grow with:  Old records never deleted  Large attachments (notes)  High Dataverse storage cost  Slower list &amp; form performance  This solution provides: ✔ Automated record archival ✔ Reduced Dataverse storage usage ✔ Improved portal performance ✔ Governance-ready pattern
 
-## 📚 Table of Contents
-- [Overview](#overview)
-- [Why This Repository Exists](#why-this-repository-exists)
-- [What This Solution Solves](#what-this-solution-solves)
-- [Architecture](#architecture)
-- [Archival Lifecycle](#archival-lifecycle)
-- [Quick Start (5 Minutes)](#quick-start-5-minutes)
-- [Repository Structure](#repository-structure)
-- [Deployment Guide](#deployment-guide)
-- [Security Model](#security-model)
-- [Admin Experience](#admin-experience)
-- [Storage Impact Metrics](#storage-impact-metrics)
-- [Demo Screenshots](#demo-screenshots)
-- [Blog ↔ Repository Mapping](#blog--repository-mapping)
-- [Production Notes](#production-notes)
-- [Who Should Use This](#who-should-use-this)
-- [Out of Scope](#out-of-scope)
-- [Contributing](#contributing)
-- [License](#license)
-
 📌 Overview
 
 This repository provides a production-ready archival solution for Power Pages designed to reduce Dataverse storage costs, improve portal performance, and support long-term governance.
