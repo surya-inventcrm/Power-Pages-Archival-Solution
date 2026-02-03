@@ -1,0 +1,8 @@
+{
+  "name": "Purge Archived Records",
+  "trigger": "Recurrence",
+  "condition": "ArchivedOn < utcNow() - 365 days",
+  "actions": [
+    "Delete row from Archive Table"
+  ]
+}
