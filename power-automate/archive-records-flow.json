@@ -1,0 +1,47 @@
+json
+{
+  "name": "Archive Records Flow",
+  "trigger": "When a row is modified",
+  "condition": "MarkForArchive == true",
+  "actions": [
+    "Create row in Archive Table",
+    "Delete row from Active Table"
+  ]
+}
+
+Sample
+{
+  "name": "Archive Old Records",
+  "trigger": {
+    "type": "Recurrence",
+    "interval": "Day",
+    "frequency": 1
+  },
+  "actions": {
+    "Get_Records": {
+      "type": "Dataverse.ListRows",
+      "filter": "pp_isarchived eq true"
+    },
+    "Create_Archive_Record": {
+      "type": "Dataverse.CreateRow",
+      "inputs": {
+        "table": "pp_request_archive",
+        "fields": {
+          "pp_title": "@{items('Get_Records')?['pp_title']}",
+          "pp_sourceid": "@{items('Get_Records')?['pp_requestid']}",
+          "pp_archivedon": "@utcNow()"
+        }
+      }
+    },
+    "Update_Original_Record": {
+      "type": "Dataverse.UpdateRow",
+      "inputs": {
+        "table": "pp_request",
+        "rowId": "@{items('Get_Records')?['pp_requestid']}",
+        "fields": {
+          "statuscode": 2
+        }
+      }
+    }
+  }
+}
