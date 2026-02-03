@@ -1,0 +1,16 @@
+
+**End-to-End Archival Architecture
+**
+<img width="201" height="231" alt="image" src="https://github.com/user-attachments/assets/4152ec81-ae0e-4745-af0c-915acfe5f0a7" />
+
+<img width="630" height="134" alt="image" src="https://github.com/user-attachments/assets/dabc54b9-54a8-4373-96a4-fa7ed256bc06" />
+
+
+**Archival Lifecycle Diagram
+**
+<img width="209" height="268" alt="image" src="https://github.com/user-attachments/assets/d1b24e96-144d-4e87-9c9a-8b8f3db6c58a" />
+
+
+**Security & Access Model
+**
+<img width="575" height="212" alt="image" src="https://github.com/user-attachments/assets/31131029-9ad0-4676-ba30-3d0e0940a9f6" />
