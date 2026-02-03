@@ -1,0 +1,78 @@
+Purpose:
+Allow admins only to view archived records and restore them.
+
+🔹 Archived Records List (Admin Only)
+<div class="archive-container">
+  <h2>Archived Requests</h2>
+
+  <table class="archive-table">
+    <thead>
+      <tr>
+        <th>Request ID</th>
+        <th>Title</th>
+        <th>Archived On</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody id="archiveRows"></tbody>
+  </table>
+</div>
+
+<script>
+fetch("/_api/pp_request_archives?$select=pp_requestid,pp_title,pp_archivedon")
+  .then(r => r.json())
+  .then(data => {
+    const rows = data.value.map(r => `
+      <tr>
+        <td>${r.pp_requestid}</td>
+        <td>${r.pp_title}</td>
+        <td>${new Date(r.pp_archivedon).toLocaleDateString()}</td>
+        <td>
+          <button onclick="restoreRecord('${r.pp_requestid}')">
+            Restore
+          </button>
+        </td>
+      </tr>
+    `).join("");
+    document.getElementById("archiveRows").innerHTML = rows;
+  });
+
+function restoreRecord(id) {
+  if(!confirm("Restore this archived record?")) return;
+
+  fetch("/_api/restore_request", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ recordId: id })
+  })
+  .then(() => alert("Restore initiated"));
+}
+</script>
+
+🔹 Archive Status Badge (Active Records)
+<span class="archive-status archived">Archived</span>
+
+<style>
+.archive-status {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+.archived {
+  background: #ffe5e5;
+  color: #a40000;
+}
+</style>
+
+🔹 “Mark for Archive” Button (Admin)
+<button id="archiveBtn">Archive Record</button>
+
+<script>
+document.getElementById("archiveBtn").onclick = function () {
+  fetch("/_api/pp_requests({{request.id}})", {
+    method: "PATCH",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ pp_isarchived: true })
+  }).then(() => alert("Marked for archive"));
+};
+</script>
